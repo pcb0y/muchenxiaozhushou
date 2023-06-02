@@ -1,0 +1,122 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "查图纸",
+
+				"navigationBarTextStyle":"white"
+			}
+		}
+	    ,{
+            "path" : "pages/list/list",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/components",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "components/webview/webview",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "查图纸",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/queryauth/queryauth",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "防伪验证",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/chat/chat",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "AI聊天",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/chatai/chatai",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "AI聊天",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/chatai/test/test",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/querypack/querypack",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "扫描收货",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/test/test",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "慕宸小助手",
+		"navigationBarBackgroundColor": "#015FF9",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {},
+	"tabBar": {
+		"color": "#333",
+		"selectedColor": "#015FF9",
+		"list": [
+			{"text":"查图纸",
+			"iconPath": "static/icon/cad0.png",
+			"selectedIconPath": "static/icon/cad1.png",
+			"pagePath":"pages/index/index"},
+			{"text":"防伪查询",
+			"iconPath": "static/icon/fangwei0.png",
+			"selectedIconPath": "static/icon/fangwei1.png",
+			"pagePath":"pages/queryauth/queryauth"},
+			{"text":"扫描收货",
+			"iconPath": "static/icon/scan0.png",
+			"selectedIconPath": "static/icon/scan1.png",
+			"pagePath":"pages/querypack/querypack"},
+			{"text":"AI聊天",
+			"iconPath": "static/icon/bot0.png",
+			"selectedIconPath": "static/icon/bot1.png",
+			"pagePath":"pages/chatai/chatai"}
+		]
+	}
+}
