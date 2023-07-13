@@ -89,6 +89,16 @@
             }
             
         }
+        ,{
+            "path" : "pages/devicemange/devicemange",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "设备报修",
+                "enablePullDownRefresh": false,
+				"navigationBarTextStyle":"white"
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
@@ -113,6 +123,10 @@
 			"iconPath": "static/icon/scan0.png",
 			"selectedIconPath": "static/icon/scan1.png",
 			"pagePath":"pages/querypack/querypack"},
+			{"text":"设备报修",
+			"iconPath": "static/icon/device0.png",
+			"selectedIconPath": "static/icon/device1.png",
+			"pagePath":"pages/devicemange/devicemange"},
 			{"text":"AI聊天",
 			"iconPath": "static/icon/bot0.png",
 			"selectedIconPath": "static/icon/bot1.png",
