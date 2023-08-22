@@ -3,7 +3,7 @@
 			<!-- 搜索框 -->
 			<view class="inputbox">
 				
-				<input confirm-type="search"  class="input" v-model="code" placeholder="请输入包装码"   :focus="focus" ref='myinput' @confirm="poinblur"></input>
+				<input confirm-type="search"  class="input" v-model="code" placeholder="请输入包装码"  :focus="focus"  ref='myinput' @confirm="poinblur"></input>
 				<button class="send-button" @click="piliang">批量提交</button>
 				<button class="send-button" @click="search">提交</button>
 				<image class="code" @click="scanQRCode" src="../../static/scanonescan.png" mode=""></image>
@@ -21,7 +21,7 @@
 		    <view v-if="base_info" >
 				<view class="ShipmentNounscanpack">
 					<view>发货单号: <text class="packnum">{{base_info.ShipmentNo}}</text></view>
-					<view>未扫猫包装数: <text class="packnum" v-model="base_info.unscanpack">{{base_info.unscanpack}}</text>	</view>
+					<view>未扫猫包装数: <text class="packnum" >{{base_info.countpack-base_info.scanpack}}</text>	</view>
 				</view>
 				<view class="packnumcountpack">				
 					<view>已扫描包装数: <text class="countnum" v-model="base_info.scanpack">{{base_info.scanpack}}</text></view>
@@ -133,34 +133,14 @@
 				},
 				// 回车触发函数
 					  poinblur:function(){
-						  
-						  
-						  if(this.result.data==null){
-							   this.request_url(this.code)
-							   
-						  }
-						  else{
-							  this.codelist.push(this.code)
-							  
-							  
-										  
-										  
-									  
-									
-							  
-						  }
-						  
-						  // let index = arr.indexOf("P90045-1")
-						  // console.log(arr.indexOf("P90033-4") )
-						  
-
-										this.code=''
-										// this.request_url(this.code)
-										this.focus = false;
-										this.$nextTick(() => {
-										  this.focus = true;
-										});
-									},
+							this.codelist.push(this.code)
+							this.code=''
+							
+							this.focus = false
+							this.$nextTick(() => {
+							  this.focus = true;
+							});
+								},
 
 				async scanQRCode() {
 				      //调用摄像头扫描二维码
