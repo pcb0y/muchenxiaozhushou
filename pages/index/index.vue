@@ -18,35 +18,36 @@
 					
 				</view>
 				<!-- {{item.order_list[0][5]}} -->
-				<uni-table class="table" type="selection" stripe sortable=true @selection-change="handleSelectionChange">
-					<uni-tr>
-						<uni-th  >名称</uni-th>
-						<uni-th width="5rpx">厚度</uni-th>
-						<uni-th width="30rpx">长度</uni-th>
-						<uni-th width="20rpx">宽度</uni-th>
-						<uni-th width="5rpx">数量</uni-th>
-						<uni-th width="100rpx">花色</uni-th>
-						<uni-th width="20rpx">异型</uni-th>
-					</uni-tr>
-					<uni-tr v-for="order in item.order_list" >
-						<uni-td>{{order[2]}}</uni-td>
-						<uni-td>{{order[3]}}</uni-td>
-						<uni-td>{{order[4]}}</uni-td>
-						<uni-td>{{order[5]}}</uni-td>
-						<uni-td>{{order[6]}}</uni-td>
-						<uni-td>{{order[7]}}</uni-td>
-						<uni-td>{{order[8]==null?"":order[8]}}</uni-td>
-					</uni-tr>
-					<uni-td></uni-td>
-					<uni-td>已选：</uni-td>
-					<uni-td>{{selectCount}}</uni-td>
-					<uni-td></uni-td>
-					<uni-td>合计:</uni-td>
-					<uni-td>{{totalcount}}</uni-td>
-					<uni-td></uni-td>
+				<view >
+					<view class='col' >
+						<text class='tablename' width="100" >名称</text>
+						<text class='tablehight' width="20">厚度</text>
+						<text class='tablelength'   width="50">长度</text>
+						<text class='tablewidth' width="50">宽度</text>
+						<text class='tablequantity' width="20">数量</text>
+						<text class='tablecolor'>花色</text>
+		<!-- 				<text class='tablehead'>异型</text> -->
+					</view>
+					<view class='col' v-for="order in item.order_list" >
+						<text class='tablename' :style="order[2]=='39收口板'||order[2]=='豪华挂衣杆'?'color: red':''" >{{order[2]}}</text>
+						<text class='tablehight':style="order[3]>18?'color: #00007f':''">{{order[3]}}</text>
+						<text class='tablelength'>{{order[4]}}</text>
+						<text class='tablewidth'>{{order[5]}}</text>
+						<text class='tablequantity'>{{order[6]}}</text>
+						<text class='tablecolor'>{{order[7]}}</text>
+				<!-- 		<text class='tablehead'>{{order[8]==null?"":order[8]}}</text> -->
+					</view>
+<!-- 					<td></td>
+					<td>已选：</td>
+					<td>{{selectCount}}</td>
+					<td></td>
+					<td>合计:</td>
+					<td>{{totalcount}}</td>
+					<td></td> -->
 
 				
-				</uni-table>
+				</view>
+
 			</view>
 
 					
@@ -74,6 +75,8 @@
 				scancode:'',//板件编码
 				count:0,//板件总数
 				selectCount:0,//选择的总数
+				// tablecolor:true,//改变表格的颜色
+				cellclassname:"aaaa"
 				
 			}
 		},
@@ -81,6 +84,7 @@
 			
 		},
 		computed:{
+
 			totalcount(){
 				if (this.data!=''){
 					return this.data[0].order_list.reduce((totle,item)=>totle+parseFloat(item[6]),0)
@@ -91,6 +95,10 @@
 			},
 		},
 		methods: {
+			changecolor(val){
+				return val=='39收口板'||val=='豪华挂衣杆'?'#ffff7f':''
+			},
+			
 			//统计已经选择的记录数
 			handleSelectionChange(selection){
 				// console.log(selection)
@@ -180,14 +188,14 @@
 			// position: absolute;
 			display: flex;
 			flex-direction: column;
-			border-width:1;
-			border-style:solid red 1px;
+			border-width:20;
+			border-style:solid red 3rpx;
 			border-color:#000000;
-			height: 100%;
+			// height: 100%;
 			// width: 100%;
-			background-color: #cccccc;
-			justify-content: center;
-			align-items: center;
+			background-color: #efefef;
+			justify-content: start;
+			// align-items: center;
 			
 	}
 	// .inputbox{
@@ -204,8 +212,8 @@
 		
 	}
 	.table{
-		// display: flex;
-		// flex-direction: row;
+		display: flex;
+		flex-direction: row;
 		// align-items: center;
 		// justify-content:center;
 		// height: 50%;
@@ -243,9 +251,67 @@
 		display: flex;
 		justify-content: center;
 	}
+	.table{
+		display: flex;
+		flex-direction: row;
+		// padding: 100rpx,100rpx;
+		justify-content: start;
+		// margin: 10rpx,10rpx;
+		// height: 950rpx;
+		// width: 100%;
+		background-color: #ff007f;
+		border-radius: 10rpx 10rpx;
+		// border-style:solid yellow 1px;
+		border-color: yellow;
+	
+	
+	}
+	.shoukou{
+		background-color: #ffff7f;
+	}
+	.houban{
+		background-color: #00007f;
+	}
+	.tablehead{
+		// padding: 0rpx 10rpx;
+		// align-items: center;
 
-	// .title {
-	// 	font-size: 36rpx;
-	// 	// color: #8f8f94;
-	// }
+	}
+	.col{
+		display: flex;
+
+	}
+	.tablename{
+		border-bottom: 1px solid #8b868a ;
+
+		width: 180rpx;
+
+	}
+	.tablehight{
+		width: 50rpx;
+		border-bottom: 1px solid #8b868a ;
+		border-left: 1px solid #8b868a ;
+	}
+	.tablelength{
+		width: 110rpx;
+		border-bottom: 1px solid #8b868a ;
+		border-left: 1px solid #8b868a ;
+	}
+	.tablewidth{
+		width: 100rpx;
+		border-bottom: 1px solid #8b868a ;
+		border-left: 1px solid #8b868a ;
+	}
+	.tablequantity{
+		width: 50rpx;
+		border-bottom: 1px solid #8b868a ;
+		border-left: 1px solid #8b868a ;
+	}
+	.tablecolor{
+		width: 150rpx;
+		border-bottom: 1px solid #8b868a ;
+		border-left: 1px solid #8b868a ;
+		border-right: 1px solid #8b868a ;
+	}
+
 </style>

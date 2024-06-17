@@ -95,16 +95,7 @@
 				}
 };
 		},
-		// watch: {
-		// 	// 使用watch来响应数据的变化
-		// 	code(newVal, oldVal) {
-		// 		// console.log('最新值是：'+newVal,"原来的值是："+ oldVal);
-		// 		if(newVal.length==11){
-		// 			this.request_url(newVal)
-					
-		// 		}
-		// 	}
-		// },
+
 		created(){
 			// console.log(this)
 			// _self=this
