@@ -2,7 +2,7 @@
 	<view class="content1">
 		<form @submit="onSubmit" class='inputbox'>
 			<view class="input">
-				<input class="uni-input" name='inputcode' maxlength="11"  placeholder="请输入11位板件编码" :value="barcode"  />
+				<input class="uni-input" name='inputcode' maxlength="15"  placeholder="请输入板件编码" :value="barcode"  />
 				<image class="code" @click="scan" src="../../static/scanonescan.png" mode=""></image>
 			<button form-type="submit" type="primary">提交</button>  
 			
@@ -13,8 +13,8 @@
 		<view class="outputbox">
 			<view v-for="(item,index) in data">
 
-				<view v-if="item.filename">
-					<button @click="openUrl(item)" >	{{item.filename}}</button>
+				<view  v-if="item.filename">
+					<button class="tuzhi" @click="openUrl(item)" >	{{item.filename}}</button>
 					
 				</view>
 				<!-- {{item.order_list[0][5]}} -->
@@ -125,7 +125,7 @@
 					},
 					
 			onSubmit(inputcode){
-				if(inputcode.detail.value.inputcode.length==11 ){
+				if(inputcode.detail.value.inputcode.length>=11 ){
 					this.barcode=inputcode.detail.value.inputcode
 					var url=`https://www.mochenhome.com/findcad/${this.barcode}`
 					// console.log(url)
@@ -148,7 +148,7 @@
 						}
 					})
 				}
-				else if(this.scancode.length==11){
+				else if(this.scancode.length>=11){
 					var url1=`https://www.mochenhome.com/findcad/${this.scancode}`
 					// console.log(url1)
 					uni.showLoading({
@@ -312,6 +312,9 @@
 		border-bottom: 1px solid #8b868a ;
 		border-left: 1px solid #8b868a ;
 		border-right: 1px solid #8b868a ;
+	}
+	.tuzhi{
+		background-color: #aa0000;
 	}
 
 </style>

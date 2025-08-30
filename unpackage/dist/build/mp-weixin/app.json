@@ -1,0 +1,59 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "components/components",
+    "components/webview/webview",
+    "pages/queryauth/queryauth",
+    "pages/chat/chat",
+    "pages/chatai/chatai",
+    "pages/chatai/test/test",
+    "pages/querypack/querypack",
+    "pages/test/test",
+    "pages/devicemange/devicemange"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "慕宸小助手",
+    "navigationBarBackgroundColor": "#015FF9",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#015FF9",
+    "list": [
+      {
+        "text": "查图纸",
+        "iconPath": "static/icon/cad0.png",
+        "selectedIconPath": "static/icon/cad1.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "防伪查询",
+        "iconPath": "static/icon/fangwei0.png",
+        "selectedIconPath": "static/icon/fangwei1.png",
+        "pagePath": "pages/queryauth/queryauth"
+      },
+      {
+        "text": "扫描收货",
+        "iconPath": "static/icon/scan0.png",
+        "selectedIconPath": "static/icon/scan1.png",
+        "pagePath": "pages/querypack/querypack"
+      },
+      {
+        "text": "设备报修",
+        "iconPath": "static/icon/device0.png",
+        "selectedIconPath": "static/icon/device1.png",
+        "pagePath": "pages/devicemange/devicemange"
+      },
+      {
+        "text": "AI聊天",
+        "iconPath": "static/icon/bot0.png",
+        "selectedIconPath": "static/icon/bot1.png",
+        "pagePath": "pages/chatai/chatai"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

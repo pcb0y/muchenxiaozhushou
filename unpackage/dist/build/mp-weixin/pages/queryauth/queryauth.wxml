@@ -1,0 +1,1 @@
+<view class="bigbox"><view value="{{message1}}" data-event-opts="{{[['input',[['__set_model',['','message1','$event',[]]]]]]}}" bindinput="__e" class="message">{{message1}}</view><view class="scanbutton"><image src="../../static/icon/scancode.png" mode="aspectFit" data-event-opts="{{[['tap',[['scanbar',['$event']]]]]}}" bindtap="__e"></image></view></view>

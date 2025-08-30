@@ -1,0 +1,1 @@
+<view class="_div"><input type="text" data-event-opts="{{[['confirm',[['handleInput',['$event']]]]]}}" bindconfirm="__e"/><button data-event-opts="{{[['tap',[['saveData',['$event']]]]]}}" bindtap="__e">保存</button><view class="_ul"><block wx:for="{{dataList}}" wx:for-item="item" wx:for-index="index" wx:key="index"><view class="_li">{{item}}</view></block></view></view>
